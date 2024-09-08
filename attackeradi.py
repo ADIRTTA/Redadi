@@ -6,14 +6,15 @@ import time
 def ascii_art_adirtta():
     print(r"""
    
-    _    ____ ___ ____ _____ _____  _
-   / \  |  _ \_ _|  _ \_   _|_   _|/ \
-  / _ \ | | | | || |_) || |   | | / _ \
- / ___ \| |_| | ||  _ < | |   | |/ ___ \
-/_/   \_\____/___|_| \_\|_|   |_/_/   \_\
+    
+             ___    ____  ________  _______________
+            /   |  / __ \/  _/ __ \/_  __/_  __/   |
+           / /| | / / / // // /_/ / / /   / / / /| |      💀 code by adirtta 💀
+          / ___ |/ /_/ // // _, _/ / /   / / / ___ |      THANK YOU FOR USE MY TOOL❤
+         /_/  |_/_____/___/_/ |_| /_/   /_/ /_/  |_|       don't copy my tool ☺️🤗
 
-                                     code by adirtta✘lastman
-     
+         A web ddos attack tool. So So don't use it for wrong and unethical activities
+
 """)
 
 # Optimized Slowloris function with threading for faster execution
