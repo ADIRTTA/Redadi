@@ -45,3 +45,6 @@ if __name__ == "__main__":
     num_threads = int(input("Enter the number of threads (more = faster): "))
     
     slowloris(target, port, num_threads)
+
+
+    print(f"Thank you for use my tool")
