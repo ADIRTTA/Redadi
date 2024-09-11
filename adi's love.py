@@ -45,3 +45,5 @@ if __name__ == "__main__":
     slowloris(target, port, num_threads)
 
     print(f"\033[1;31mThank you for using my tool\033[0m")
+
+    print(f"\033[1;31mmy github id: github.com/ADIRTTA\033[0m")
