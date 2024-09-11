@@ -34,3 +34,6 @@ go my github id
 done enjoy the tool
 
 ❤️❤️
+
+
+it is a ddos attack tool
