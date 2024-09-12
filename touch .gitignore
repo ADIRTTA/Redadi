@@ -1,0 +1,22 @@
+# Ignore sensitive files
+config.py
+credentials.json
+secrets.txt
+
+# Ignore Python cache and environment files
+__pycache__/
+*.py[cod]
+*.env
+.venv/
+.env/
+# config.py
+PASSWORD = "webadi"
+import getpass
+from config import PASSWORD
+
+# Password authentication function
+def authenticate():
+    user_password = getpass.getpass(prompt="\033[1;36mEnter the password to access the tool: \033[0m")
+    if user_password != PASSWORD:
+        print("\033[1;31mIncorrect password. Exiting...\033[0m")
+        exit()
