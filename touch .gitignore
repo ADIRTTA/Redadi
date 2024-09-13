@@ -10,7 +10,7 @@ __pycache__/
 .venv/
 .env/
 # config.py
-PASSWORD = "webadi"
+PASSWORD = "ADi"
 import getpass
 from config import PASSWORD
 
