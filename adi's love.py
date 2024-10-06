@@ -2,6 +2,11 @@ import socket
 import threading
 import time
 import getpass
+import os
+
+# CLEAR
+def clear():
+    os.system('clear')
 
 # Colored ASCII Art for "ADIRTTA" using '|_' style
 def ascii_art_adirtta():
@@ -47,6 +52,7 @@ def slowloris(target, port, num_threads):
         print(f"\033[1;33mSent love message {i + 1} 💌\033[0m")
 
 if __name__ == "__main__":
+    clear()  # Clear the screen before showing anything
     ascii_art_adirtta()  # Display the colorful ASCII art for 'ADIRTTA'
 
     authenticate()  # Authenticate after displaying ASCII art
