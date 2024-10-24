@@ -24,7 +24,7 @@ cd Redadi
 chomd +x *
 
 
-python attackeradi.py
+python 'ADI DDOS.py'
 
 entry ip and port 
 
